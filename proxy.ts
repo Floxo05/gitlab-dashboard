@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 import { unseal } from "./lib/crypto";
 import { PAT_COOKIE } from "./lib/constants";
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   // Only guard dashboard (and future protected paths via matcher below)
