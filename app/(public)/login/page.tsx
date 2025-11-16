@@ -1,11 +1,13 @@
 import { loginWithPat } from "./actions";
 
-export default function LoginPage({
+export default async function LoginPage({
   searchParams,
 }: {
-  searchParams?: { [key: string]: string | string[] | undefined };
+  // In Next 16, searchParams is a Promise in Server Components
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
-  const error = typeof searchParams?.error === "string" ? searchParams?.error : undefined;
+  const sp = await searchParams;
+  const error = typeof sp?.error === "string" ? sp.error : undefined;
   return (
     <main className="min-h-screen flex items-center justify-center p-6">
       <div className="w-full max-w-md rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-black p-6 shadow-sm">
