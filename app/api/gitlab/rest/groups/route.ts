@@ -12,6 +12,7 @@ const allowedParams = new Set([
   "search",
   "order_by",
   "sort",
+  "top_level_only",
 ]);
 
 function pickQuery(url: URL) {
