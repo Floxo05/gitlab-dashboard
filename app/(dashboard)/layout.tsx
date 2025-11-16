@@ -27,7 +27,7 @@ export default function DashboardLayout({
             </button>
           </li>
           <li>
-            <Link href="/login" className="block px-2 py-1.5 rounded hover:bg-zinc-100 dark:hover:bg-zinc-900">
+            <Link href="/logout" className="block px-2 py-1.5 rounded hover:bg-zinc-100 dark:hover:bg-zinc-900">
               Logout
             </Link>
           </li>
