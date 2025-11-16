@@ -23,10 +23,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang="de" suppressHydrationWarning>
+      <head>
+        {/* Kein ThemeScript nötig: Dark‑Theme per CSS‑Variablen als Standard */}
+      </head>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}>
         {children}
       </body>
     </html>

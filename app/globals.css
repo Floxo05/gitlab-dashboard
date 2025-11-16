@@ -1,26 +1,65 @@
 @import "tailwindcss";
 
+/* Design‑Tokens (Dark as Default) */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Sanfter Dark‑Mode als Standard über CSS‑Variablen */
+  --bg: #0f1115;          /* soft charcoal, nicht reines Schwarz */
+  --fg: #e6e7eb;          /* weiches Weiß */
+  --card: #131720;        /* etwas heller als Page-BG */
+  --muted: #a1a6b0;       /* desaturated */
+  --border: #232733;      /* dezente Ränder */
+  --accent: #7aa2f7;      /* softer blue */
+  --ring: #3b4760;        /* focus ring dark */
 }
 
+/* Tailwind v4 Token Mapping */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-background: var(--bg);
+  --color-foreground: var(--fg);
+  --color-bg: var(--bg);
+  --color-card: var(--card);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-ring: var(--ring);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Hinweis: Kein Toggle/keine .dark-Klasse mehr nötig –
+   das Theme wird ausschließlich über Variablen gesteuert. */
+
+/* Base Styles */
+html,
+body {
+  height: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-geist-sans), system-ui, -apple-system, Segoe UI, Roboto,
+    Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji",
+    "Segoe UI Emoji";
+}
+
+/* Links & Focus */
+a { color: var(--accent); }
+
+:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--ring) 60%, transparent);
+  border-radius: var(--radius-sm);
+}
+
+/* Utility: card shadow leicht */
+.shadow-card {
+  box-shadow:
+    0 1px 2px rgba(0,0,0,0.05),
+    0 8px 24px rgba(0,0,0,0.06);
 }
