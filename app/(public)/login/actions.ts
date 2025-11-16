@@ -1,8 +1,8 @@
 "use server";
 
 import { redirect } from "next/navigation";
-import { config } from "../../../lib/config";
-import { setPatCookie } from "../../../lib/auth";
+import { config } from "@/lib/config";
+import { setPatCookie } from "@/lib/auth";
 
 async function validatePat(pat: string): Promise<{ ok: boolean; message?: string }>
 {
