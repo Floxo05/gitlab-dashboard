@@ -7,7 +7,8 @@ export default function LoginPage() {
           Melde dich mit deinem GitLab Personal Access Token (PAT) an.
           Hinweis: In Phase 1 wird hier die sichere Server‑Verarbeitung ergänzt.
         </p>
-        <form className="grid gap-4" onSubmit={(e) => e.preventDefault()}>
+        {/* No client-side interactivity yet; server action will be added in Phase 1 */}
+        <form className="grid gap-4">
           <label className="grid gap-2">
             <span className="text-sm">Personal Access Token</span>
             <input
@@ -19,7 +20,8 @@ export default function LoginPage() {
           </label>
           <button
             className="h-10 rounded-md bg-zinc-900 text-white dark:bg-zinc-100 dark:text-black hover:opacity-90 transition"
-            type="submit"
+            type="button"
+            aria-disabled
             title="Wird in Phase 1 aktiviert"
           >
             Anmelden (demnächst)
