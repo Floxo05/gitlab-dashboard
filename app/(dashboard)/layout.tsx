@@ -25,6 +25,11 @@ export default function DashboardLayout({
             </Link>
           </li>
           <li>
+            <Link href="/analysis" className="block px-2 py-1.5 rounded hover:bg-foreground/5">
+              Analyse
+            </Link>
+          </li>
+          <li>
             <button className="w-full text-left px-2 py-1.5 rounded text-muted cursor-not-allowed">
               Graph (bald)
             </button>
